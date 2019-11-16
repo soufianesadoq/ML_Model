@@ -25,7 +25,7 @@ def prediction():
         Niederschlag = int(request.form['Niederschlag'])
         Schnee = int(request.form['Schnee'])
         model = request.form['model']
-        data = {'Temperatur': [Temperatur], 'relative Luftfeuchtigkeit': [relativeLuftfeuchtigkeit], 'Niederschlag': [Niederschlag], 'Schnee': [Schnee]}
+        data = {'relative Luftfeuchtigkeit': [relativeLuftfeuchtigkeit], 'Temperatur': [Temperatur], 'Niederschlag': [Niederschlag], 'Schnee': [Schnee]}
         df = pd.DataFrame(data)
         print(type(model))
         print(pd.DataFrame(data))
