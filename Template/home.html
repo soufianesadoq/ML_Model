@@ -22,31 +22,46 @@
     <div class="">
       <h1>WELCOME TO PREDICTION WEBSITE FOR YOUR AKTIVITY</h1>
     </div>
-    <p>to predict what to do to day please try to insert the given parameters</p>
+    <p>to predict what to do today please try to insert the given parameters</p>
     <div class="card card-outline-secondary">
                           <div class="card-header">
                               <h3 class="mb-0"> Predict</h3>
                           </div>
                           <div class="card-body">
-                              <form class="form" action="/" role="form" autocomplete="off" method="post">
+                              <form class="form" action="{{ url_for('prediction')}}" method="POST">
                                   <div class="form-group">
-                                      <label for="inputName">Temperaturrelative Luftfeuchtigkeit</label>
-                                      <input type="text" class="form-control" id="inputName" placeholder="Full name">
+                                      <label for="date">Id</label>
+                                      <input type="number" class="form-control" id="id" name="id" placeholder="Id" required="">
                                   </div>
                                   <div class="form-group">
-                                      <label for="inputEmail3">Temperatur</label>
-                                      <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required="">
+                                      <label for="date">Datum</label>
+                                      <input type="date" class="form-control" id="date" name="date" placeholder="date" required="">
                                   </div>
                                   <div class="form-group">
-                                      <label for="inputPassword3">Niederschlag</label>
-                                      <input type="password" class="form-control" id="inputPassword3" placeholder="Password" required="">
+                                      <label for="relativeLuftfeuchtigkeit">relative Luftfeuchtigkeit</label>
+                                      <input type="number" class="form-control" id="relativeLuftfeuchtigkeit" name="relativeLuftfeuchtigkeit" placeholder="relative Luftfeuchtigkeit" required="">
                                   </div>
                                   <div class="form-group">
-                                      <label for="inputVerify3">Schnee</label>
-                                      <input type="password" class="form-control" id="inputVerify3" placeholder="Password (again)" required="">
+                                      <label for="Temperatur">Temperatur</label>
+                                      <input type="number" class="form-control" id="Temperatur" name="Temperatur" placeholder="Temperatur" required="">
                                   </div>
                                   <div class="form-group">
-                                      <button type="submit" value="Make prediction" class="btn btn-success btn-lg float-right" >Start Predicting</button>
+                                      <label for="Niederschlag">Niederschlag</label>
+                                      <input type="number" class="form-control" id="Niederschlag" name="Niederschlag" placeholder="Niederschlag" required="">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="Schnee">Schnee</label>
+                                      <input type="number" class="form-control" id="Schnee" name="Schnee" placeholder="Schnee" required="">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="model">Select model</label>
+                                            <select class="form-control" id="model" name="model">
+                                                <option value="1">Gwichteter Abstand</option>
+                                                <option value="2">Normaler Abstand</option>
+                                            </select>
+                                  </div>
+                                  <div class="form-group">
+                                      <button type="submit" value="Make_prediction" class="btn btn-success btn-lg float-right" >Start Predicting</button>
                                   </div>
                               </form>
                           </div>
