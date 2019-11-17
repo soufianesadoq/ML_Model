@@ -16,7 +16,7 @@ app = Flask(__name__, template_folder='Template')
 def index():
     return render_template('home.html',methods=['POST'])
 
-@app.route('/prediction',methods=['POST'])
+@app.route('/prediction',methods=['POST','GET'])
 def prediction():
     if request.method == 'POST':
 
@@ -28,9 +28,9 @@ def prediction():
         data = {'relative Luftfeuchtigkeit': [relativeLuftfeuchtigkeit], 'Temperatur': [Temperatur], 'Niederschlag': [Niederschlag], 'Schnee': [Schnee]}
         df = pd.DataFrame(data)
         print(type(model))
-        print(pd.DataFrame(data))
+        print(np.array(data))
         if model == "1":
-            pred = model1.predict(df)
+            pred = model1.predict(np.array(df))
             print(pred)
             return render_template('prediction.html', result=pred, model='gewichtes Model')
 
